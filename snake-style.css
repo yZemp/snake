@@ -1,0 +1,311 @@
+/******* General *********/
+
+:root {
+  --blacks: #0a0a0f;
+  --main-green: #008000;
+  --secondary-green: #5B8201;
+  --contrast: #541388;
+  --red: #A21F16;
+  --white: #fff;
+  --yellow: #ecec13;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: url('snakeMedia/stars8bit.jpg');
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
+}
+
+
+header {
+  background-size: 100% auto;
+  min-width: 300px;
+  min-height: 200px;
+  width: 90%;
+  height: 40vh;
+  margin: 10px auto;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  width: 90%;
+  min-width: 450px;
+}
+
+footer {
+  position: relative;
+  font-family: 'Press Start 2P', cursive;
+  width: 100%;
+  min-height: 220px;
+  padding-top: 2vh;
+  padding-bottom: 5vh;
+  color: var(--white);
+  background: var(--contrast);
+  justify-content: center;
+
+  margin-top: 10vh;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-item {
+  margin: 20px auto;
+  font-size: .7vw;
+}
+
+footer div span {
+  cursor: default;
+}
+
+footer div a img {
+  width: 50px;
+  height: 50px;
+}
+
+/***********************************
+************* Main Body ************
+***********************************/
+
+#main-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+  padding: 15vh 0px;
+  padding-top: 20vh;
+}
+
+.main-wrapper-child {
+  margin: auto 5px;
+}
+
+.play-button{
+  font-family: 'Quantico', sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1vw;
+  color: var(--main-green);
+  border: 5px solid var(--main-green);
+  margin: 20px;
+  padding: 10px;
+  width: 60%;
+  min-width: 200px;
+  height: 200px;
+  line-height: 200px;
+  transition: background ease-in-out 80ms;
+  overflow: hidden;
+  position: relative;
+  transition: color ease-in-out 200ms;
+
+  -webkit-user-select: none;       
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.play-button:hover {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.play-button::before {
+  content: '';
+  background: var(--main-green);
+  width: 200%;
+  height: 0%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -1;
+  transition: height ease-in-out 200ms;
+}
+
+.play-button:hover::before {
+  height: 450%;
+}
+
+#main-wrapper img {
+  max-width: 20vw;
+  min-width: 150px;
+}
+
+.option-btn {
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  margin: auto 3vw;
+  font-size: 2rem;
+  padding: auto 100px;
+}
+
+/*********** Game frame ***********/
+
+.game-frame {
+  width: 80vh;
+  min-width: 300px;
+  height: 80vh;
+  min-height: 300px;
+  display: none;
+  background: var(--blacks);
+  border: 5px solid var(--main-green);
+}
+
+/*********** Options ***********/
+
+.options-panel {
+  width: 10000px;
+}
+
+#option-table {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  right: 500px;
+  color: var(--main-green);
+  font-family: 'Quantico', sans-serif;
+  /* border: 3px dotted yellow; */
+  flex-direction: column;
+  align-items: center;
+  height: 78vh;
+  min-height: 290px;
+}
+
+#resume {
+  font-size: 5rem;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.setting {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  width: 500px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 20px 0px;
+  /* border: 3px dotted aquamarine; */
+}
+
+.sub-setting {
+  margin: 10px;
+}
+
+#score {
+  color: var(--main-green);
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  padding-left: 35px;
+  margin-bottom: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: var(--main-green);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/***********************************
+*************** Table **************
+***********************************/
+
+table {
+  width: 100%;
+  height: 100%;
+}
+
+td {
+  background: violet;
+  border: 1px solid var(--blacks);
+  position: relative;
+}
+
+.hasFood::after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-left: 15px solid var(--yellow);
+  border-bottom: 15px solid var(--yellow);
+  top: 0%;
+  left: 0%;
+  transform: translate(50%, 50%);
+}
+

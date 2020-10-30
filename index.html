@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="snakeMedia/snakeFavicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>Snake!</title>
+  <!-- <link rel="stylesheet" href="snake-style.css"> -->
+</head>
+
+<body>
+  <header>
+    <img src="snakeMedia/Header.png" alt="Snake!">
+  </header>
+
+  <div id="main-wrapper">
+    <a class="play-button main-wrapper-child">Play</a>
+    <div class="game-frame main-wrapper-child">
+      <div id="option-table">
+        <div id="resume">Resume</div>
+        <div id="music-setting" class="setting">
+          <div class="sub-setting">Music:</div>
+          <label class="container">
+            <input type="checkbox" checked="checked" name="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="setting">
+          <div class="sub-setting">Score:</div>
+          <div class="sub-setting" id="score">0</div>
+        </div>
+        <div id="high-score" class="setting">
+          <div class="sub-setting" id="highScore-name">High score:</div>
+          <div class="sub-setting" id="highScore">0</div>
+        </div>
+      </div>
+      <!-- Here will be the table -->
+    </div>
+    <img class="main-wrapper-child" src="snakeMedia/snakeIcon.png" alt="Snake!">
+  </div>
+
+  <footer>
+    <div>
+      <span class="footer-item">A game by: yZemp</span>
+      <span class="footer-item">Audio cured by: Bondi</span>
+      <span class="footer-item">Thanks to the testers: Bondi, May, Ale, Andre</span>
+      <a class="footer-item" target="blank_" href="https://www.instagram.com/yzemp_/">
+        <img src="snakeMedia/InstaIconBianca8bit.png" alt="Insta">
+      </a>
+    </div>
+  </footer>
+
+  <script src="snakeLogic.js"></script>
+</body>
+
+</html>
